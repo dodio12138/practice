@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "web_01": "html",
+        "malloc.h": "c"
+    },
+    "[c]": {
+        "files.encoding": "gbk"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
