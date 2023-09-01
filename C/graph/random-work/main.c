@@ -4,8 +4,8 @@
 #include <time.h>
 #include <Windows.h>
 
-#define HIGHT 100
-#define WIDTH 100
+#define HIGHT 200
+#define WIDTH 200
 
 struct cro
 {
@@ -20,7 +20,7 @@ int randomChoose();
 void loop();
 void ini();
 int speed = 5;
-char c = '+';
+char c = 'o';
 // char* userInput;
 // char userc;
 
@@ -48,7 +48,9 @@ int main()
 void ini()
 {
     system("title Random Walk");
-    system("mode con cols=100 lines=50");
+    system("mode con cols=200 lines=100");
+    system("reg add \"HKEY_CURRENT_USER\\Console\" /v \"FontSize\" /t REG_DWORD /d 0x00020000 /f");
+    system("cls");
     hide(1);
 }
 
