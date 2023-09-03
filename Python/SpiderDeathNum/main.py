@@ -1,14 +1,15 @@
+import re
+from collections import defaultdict
 import requests
 from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
-plt.rcParams["font.sans-serif"]=["SimHei"] #设置字体
-plt.rcParams["axes.unicode_minus"]=False #该语句解决图像中的“-”负号的乱码问题
-from collections import defaultdict
-import re
+plt.rcParams["font.sans-serif"] = ["SimHei"]  # 设置字体
+plt.rcParams["axes.unicode_minus"] = False  # 该语句解决图像中的“-”负号的乱码问题
 
 check = True
 time_data = []
 data_count = defaultdict(int)
+
 
 def loopSpider(a):
     url = 'https://www.yourlocalguardian.co.uk/memorials/?p=' + str(a)
@@ -26,6 +27,7 @@ def loopSpider(a):
     else:
         check = False
 
+
 def count():
     for date_string in time_data:
         date_parts = re.findall(r'\d{2}/\d{2}/\d{4}', date_string)
@@ -34,15 +36,16 @@ def count():
             # 增加对应日期的出现次数
             data_count[formatted_date] += 1
 
+
 for i in range(800):
-    if(check):
+    if (check):
         loopSpider(i)
     else:
         break
 
 count()
 
-dates = list(data_count.keys())
+dates = list(range(0, time_data.count))
 counts = list(data_count.values())
 # print(time_data)
 
