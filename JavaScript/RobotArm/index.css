@@ -1,0 +1,39 @@
+:root{
+    --sapce: 400px;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.space{
+    width: var(--sapce);
+    height: var(--sapce);
+}
+
+.arm{
+    background-color: grey;
+}
+
+#arm_1{
+    position: absolute;
+    transform-origin: left;
+    transform: translate(0, var(--sapce)) rotate(60deg);
+    width: 200px;
+    height: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#arm_2{
+    position: absolute;
+    transform-origin: left;
+    transform: translate(200px, 0px) rotate(60deg);
+    width: 100px;
+    height: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
